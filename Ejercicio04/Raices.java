@@ -2,14 +2,19 @@ package Ejercicio04;
 
 public class Raices {
 
+	// Aquí tenemos los atributos de nuestro objeto.
 	private double a, b, c;
 
+	// Este es nuestro constructor.
 	public Raices(double a, double b, double c) {
 		this.a = a;
 		this.b = b;
 		this.c = c;
 	}
 
+	// Este método cuando lo llamemos lo primero que hará es ver si nuestra array
+	// tiene solución posible, en caso de que no la tenga lo dirá por pantalla, y si
+	// tiene solución ejecutara otro método llamado leerArray.
 	public void obtenerRaices() {
 
 		if (tieneRaices() == true) {
@@ -20,6 +25,8 @@ public class Raices {
 
 	}
 
+	// Este método es como el anterior, pero solo va a seguir con la ejecución si la
+	// ecuación tiene una única solución.
 	public void obtenerRaiz() {
 
 		if (tieneRaiz() == true) {
@@ -33,12 +40,16 @@ public class Raices {
 
 	}
 
+	// Este método la única función que tiene es calcular el discriminante que lo
+	// obtendremos con la fórmula que contiene y lo retornara.
 	public double getDiscriminante() {
 
 		return (Math.pow(b, 2) - 4 * a * c);
 
 	}
 
+	// Los dos métodos siguientes son los responsables de comprobar si la ecuación
+	// tiene uno o dos resultados.
 	public boolean tieneRaices() {
 
 		if (getDiscriminante() >= 0) {
@@ -56,6 +67,9 @@ public class Raices {
 
 	}
 
+	// Este método con la ayuda de los dos anteriores nos dirá si la ecuación del
+	// objeto tiene una solución, dos o ninguna solución real (Discriminante) y
+	// ejecuta el método leerArray.
 	public void calcular() {
 
 		if (tieneRaiz() == true) {
@@ -72,6 +86,7 @@ public class Raices {
 
 	}
 
+	// Este método nos va a hacer las operaciones y las guardará en una array.
 	private double[] mates() {
 
 		double num[] = new double[2];
@@ -83,6 +98,8 @@ public class Raices {
 
 	}
 
+	// Este método simplemente va a leer la array tratando de forma especial si es
+	// una ecuación de un solo resultado.
 	private void leerArray() {
 
 		double calc[] = mates();
