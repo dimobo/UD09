@@ -1,10 +1,15 @@
-package Ejercicio04;
+package ejercicio04;
 
 public class Raices {
 
 	// Aquí tenemos los atributos de nuestro objeto.
 	private double a, b, c;
 
+	public Raices() {
+		a = 0;
+		b = 0;
+		c = 0;
+	}
 	// Este es nuestro constructor.
 	public Raices(double a, double b, double c) {
 		this.a = a;
