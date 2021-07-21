@@ -27,17 +27,18 @@ public class Sala {
 	}
 
 	// Metodo para sentar a una persona.
-	public String[][] sentarPersona() {
+	public String[][] sentarPersonaRandom(int espectadores) {
 		Random r = new Random();
 
-		while (true) {
-			int r1 = r.nextInt((8 - 0) + 1) + 0;
-			int r2 = r.nextInt((9 - 0) + 1) + 0;
+		for (int i = 0; i < espectadores;) {
+			int r1 = r.nextInt((7 - 0) + 1) + 0;
+			int r2 = r.nextInt((8 - 0) + 1) + 0;
 			if (asiento[r1][r2].equals("X")) {
 				asiento[r1][r2] = "~";
-				return asiento;
+				i++;
 			}
 		}
+		return asiento;
 	}
 
 	// Leer sala.
