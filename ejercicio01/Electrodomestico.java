@@ -154,9 +154,9 @@ public class Electrodomestico {
 	@Override
 	public String toString() {
 
-		String objeto = "Precio base del Electrodoméstico: " + this.precioBase + " Precio Final del Electrodoméstico "
-				+ this.precioTotal + " Peso del Electrodoméstico: " + this.peso + " Color del Electrodoméstico: "
-				+ this.color + " Consumo energetico:  " + this.consumoEnergetico;
+		String objeto = "Precio base del Electrodoméstico: " + this.precioBase + "\nPrecio Final del Electrodoméstico "
+				+ this.precioTotal + "\nPeso del Electrodoméstico: " + this.peso + "\nColor del Electrodoméstico: "
+				+ this.color + "\nConsumo energetico:  " + this.consumoEnergetico;
 
 		return objeto;
 
