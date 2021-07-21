@@ -1,6 +1,6 @@
 package ejercicio02;
 
-public class Serie {
+public class Serie implements Entregable {
 
 	// Atributos de la clase.
 	private String titulo, genero, creador;
@@ -77,6 +77,29 @@ public class Serie {
 
 	public void setNumeroTemporadas(int numeroTemporadas) {
 		this.numeroTemporadas = numeroTemporadas;
+	}
+
+	// Aqui tenemos los metodos implementados de entregable.
+	@Override
+	public void entregar() {
+		this.entregado = true;
+	}
+
+	@Override
+	public void devolver() {
+		this.entregado = false;
+	}
+
+	@Override
+	public boolean isEntregado() {
+		return this.entregado;
+	}
+
+	@Override
+	public int compareTo(Object a) {
+		Serie s = (Serie) a;
+		return s.getNumeroTemporadas();
+		
 	}
 
 }

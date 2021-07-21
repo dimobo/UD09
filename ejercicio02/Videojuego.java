@@ -1,6 +1,6 @@
 package ejercicio02;
 
-public class Videojuego {
+public class Videojuego implements Entregable {
 
 	// Atributos de la clase.
 	private String titulo, genero, compañia;
@@ -80,6 +80,29 @@ public class Videojuego {
 
 	public void setHorasEstimadas(int horasEstimadas) {
 		this.horasEstimadas = horasEstimadas;
+	}
+
+	// Aqui tenemos los metodos implementados de entregable.
+	@Override
+	public void entregar() {
+		this.entregado = true;
+	}
+
+	@Override
+	public void devolver() {
+		this.entregado = false;
+	}
+
+	@Override
+	public boolean isEntregado() {
+		return this.entregado;
+	}
+
+	@Override
+	public int compareTo(Object a) {
+		Videojuego v = (Videojuego) a;
+		return v.getHorasEstimadas();
+	
 	}
 
 }
