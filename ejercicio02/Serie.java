@@ -3,14 +3,14 @@ package ejercicio02;
 public class Serie {
 
 	// Atributos de la clase.
-	protected String titulo, genero, creador;
-	protected int numeroTemporadas;
-	protected boolean entregado;
+	private String titulo, genero, creador;
+	private int numeroTemporadas;
+	private boolean entregado;
 
 	// Valores por defecto.
-	protected final String TITULODEF = "", GENERODEF = "", CREADORDEF = "";
-	protected final int NUMEROTEMPORADASDEF = 3;
-	protected final boolean ENTREGADODEF = false;
+	private final String TITULODEF = "", GENERODEF = "", CREADORDEF = "";
+	private final int NUMEROTEMPORADASDEF = 3;
+	private final boolean ENTREGADODEF = false;
 
 	// Constructor default.
 	public Serie() {
@@ -29,9 +29,9 @@ public class Serie {
 		this.numeroTemporadas = NUMEROTEMPORADASDEF;
 		this.entregado = ENTREGADODEF;
 	}
-	
+
 	// Constructor de todos los atributos menos entregado.
-	public Serie(String titulo, String creador, String genero, int numTemporadas) {
+	public Serie(String titulo, String genero, String creador, int numTemporadas) {
 		this.titulo = titulo;
 		this.genero = genero;
 		this.creador = creador;
@@ -42,8 +42,8 @@ public class Serie {
 	// toString sobreescrito.
 	@Override
 	public String toString() {
-		return "Titulo: " + this.titulo + "/nGenero: " + this.genero + "\nCreador: " + this.creador
-				+ "Numero temporadas: " + this.numeroTemporadas + "\nEntregada: " + this.entregado;
+		return "Titulo: " + this.titulo + "\nGenero: " + this.genero + "\nCreador: " + this.creador
+				+ "\nNumero temporadas: " + this.numeroTemporadas + "\nEntregada: " + this.entregado;
 	}
 
 	// Zona de getters y setters (Todos menos entregado)
@@ -78,6 +78,5 @@ public class Serie {
 	public void setNumeroTemporadas(int numeroTemporadas) {
 		this.numeroTemporadas = numeroTemporadas;
 	}
-	
-	
+
 }
