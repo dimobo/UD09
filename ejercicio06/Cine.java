@@ -4,5 +4,6 @@ public class Cine {
 	
 	// Atributos de la clase Cine
 	
+	Pelicula peli;
 
 }
