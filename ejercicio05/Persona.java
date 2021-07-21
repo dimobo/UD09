@@ -2,9 +2,10 @@ package ejercicio05;
 
 public abstract class Persona {
 	
-	protected String nombre, edad;
+	protected String nombre;
+	protected int edad;
 	protected char sexo;
 	
-	public abstract int  falta() ;
+	public abstract boolean  haFaltado() ;
 
 }
