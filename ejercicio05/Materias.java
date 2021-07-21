@@ -17,8 +17,17 @@ public class Materias {
 		return materia;
 	}
 
-	public static ArrayList<String> getListaMaterias() {
-		return listaMateria();
+	// Este metodo se asegura que hemos introducido una materia valida para un
+	// profesor y en caso negarivo devuelve una cadena vacia.
+	private static String comprobarMateria(ArrayList<String> materiaLista, String materia) {
+		if (materiaLista.contains(materia)) {
+			return materia;
+		}
+		return "";
+	}
+
+	public static String getListaMaterias(String materia) {
+		return comprobarMateria(listaMateria(), materia);
 	}
 
 	public static void addListaMaterias(String nombre) {
