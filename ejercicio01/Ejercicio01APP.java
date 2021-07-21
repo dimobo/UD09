@@ -5,26 +5,30 @@ public class Ejercicio01APP {
 	public static void main(String[] args) {
 
 		// Crearemos un array que contendrá objetos de la clase Electrodomestico.
-		Television arrayElec[] = new Television[6];
+		Electrodomestico arrayElec[] = new Electrodomestico[10];
 
 		// Generaremos los objetos para hacer las pruebas.
-		// Este primer objeto sera con el contructor por defecto.
-		arrayElec[0] = new Television();
-		// Este segundo objeto sera con el constructor para precio y perso.
+		arrayElec[0] = new Lavadora();
 		arrayElec[1] = new Television(400, 15.4);
-		// Los siguientes electrodomésticos son para el constructor con todos los
-		// atributos y forzando errores.
 		arrayElec[2] = new Television(50.21, 30, "rojo", 'A', 25, true);
-		// En este falla el color.
-		arrayElec[3] = new Television(115, 90, "beige", 'C', 49, false);
-		// En este falla la letra.
-		arrayElec[4] = new Television(140, 9, "Gris", 'z', 30, false);
-		// En este fallan los dos.
+		arrayElec[3] = new Lavadora(115, 90, 5, "beige", 'C');
+		arrayElec[4] = new Lavadora(140, 9, 25, "Gris", 'z');
 		arrayElec[5] = new Television(170, 50, "Naranja", 'G', 80, true);
+		arrayElec[6] = new Television(170, 50, "Naranja", 'B', 80, true);
+		arrayElec[7] = new Lavadora(170, 50, 15, "Naranja", 'B');
+		arrayElec[8] = new Lavadora(170, 50, 40, "Naranja", 'E');
+		arrayElec[9] = new Television(170, 50, "Naranja", 'C', 80, true);
+
+		// Esto llama al metodo toString, lo he usado para hacer pruebas.
+//		for (int i = 0; i < arrayElec.length; i++) {
+//			System.out.println("Electrodoméstico " + (i + 1));
+//			System.out.println(arrayElec[i].toString());
+//
+//		}
 
 		for (int i = 0; i < arrayElec.length; i++) {
-			System.out.println("Electrodoméstico " + (i + 1));
-			System.out.println(arrayElec[i].toString());
+			
+			arrayElec[i].precioFinal(arrayElec[i].getPrecioBase(), arrayElec[i].getConsumoEnergetico(), arrayElec[i].getPeso());
 
 		}
 

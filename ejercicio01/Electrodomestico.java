@@ -24,10 +24,6 @@ public class Electrodomestico {
 		color = COLORDEF;
 		consumoEnergetico = CONSUMODEF;
 		precioBase = PRECIODEF;
-		// Estamos obligados a poner el precio total como último atributo porque estamos
-		// llamando al atributo consumoEnergetico del mismo objeto, ya que está
-		// programado para que tenga un valor válido.
-		precioTotal = precioFinal(precioBase, this.consumoEnergetico, peso);
 
 	}
 
@@ -38,10 +34,6 @@ public class Electrodomestico {
 		this.color = COLORDEF;
 		this.consumoEnergetico = CONSUMODEF;
 		this.precioBase = precioBase;
-		// Estamos obligados a poner el precio total como último atributo porque estamos
-		// llamando al atributo consumoEnergetico del mismo objeto, ya que está
-		// programado para que tenga un valor válido.
-		this.precioTotal = precioFinal(precioBase, this.consumoEnergetico, peso);
 
 	}
 
@@ -52,10 +44,6 @@ public class Electrodomestico {
 		this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
 		this.color = comprobarColor(color);
 		this.precioBase = precioBase;
-		// Estamos obligados a poner el precio total como último atributo porque estamos
-		// llamando al atributo consumoEnergetico del mismo objeto, ya que está
-		// programado para que tenga un valor válido.
-		this.precioTotal = precioFinal(precioBase, this.consumoEnergetico, peso);
 
 	}
 
@@ -100,8 +88,6 @@ public class Electrodomestico {
 
 		return colorList;
 	}
-
-	// L
 
 	// Este método comprobará la letra introducida para el coche.
 	protected char comprobarConsumoEnergetico(char letra) {
@@ -155,8 +141,9 @@ public class Electrodomestico {
 	public String toString() {
 
 		String objeto = "Precio base del Electrodoméstico: " + this.precioBase + "\nPrecio Final del Electrodoméstico "
-				+ this.precioTotal + "\nPeso del Electrodoméstico: " + this.peso + "\nColor del Electrodoméstico: "
-				+ this.color + "\nConsumo energetico:  " + this.consumoEnergetico;
+				+ precioFinal(this.precioBase, this.consumoEnergetico, this.peso) + "\nPeso del Electrodoméstico: "
+				+ this.peso + "\nColor del Electrodoméstico: " + this.color + "\nConsumo energetico:  "
+				+ this.consumoEnergetico;
 
 		return objeto;
 
