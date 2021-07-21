@@ -23,6 +23,7 @@ public class ejercicio06APP {
 
 		switch (pedirNumero(
 				"¿Que opcion desea realizar?\n1) Espectadores aleatoriamente.\n2) Espectadores uno a uno.\n3) Simulacion con dinero")) {
+		// Este caso nos generara un numero aleatorio de espectadores para la sala.
 		case 1:
 			for (int i = 0; i < r1; i++) {
 				r2 = r.nextInt((80 - 1) + 1) + 1;
@@ -31,13 +32,41 @@ public class ejercicio06APP {
 			System.out.println("Espectadores generados: " + r1);
 			s1.sentarPersonaRandom(r1);
 			s1.leerSala();
-
 			break;
 
+		//Con este caso sentaremos a los espectadores uno a uno en nuestra sala.
 		case 2:
-
+			r1 = 0;
+			r2 = 0;
+			boolean fi = false;
+			while (fi == false) {
+				switch (pedirNumero("1) Añadir espectador \n2) Listar sala \n3) Salir")) {
+				case 1:
+					s1.sentarPersona(r1, r2);
+					r2++;
+					if (r2 == 8 && r1 == 7) {
+						System.out.println("No quedan espacios en la sala.");
+						fi = true;
+					}
+					if (r2 == 8) {
+						r1++;
+						r2 = 0;
+					}
+					break;
+				case 2:
+					s1.leerSala();
+					break;
+				case 3:
+					fi = true;
+					break;
+				default:
+					System.out.println("Valor introducido no válido.");
+					break;
+				}
+			}
 			break;
 
+		// TODO
 		case 3:
 
 			break;
