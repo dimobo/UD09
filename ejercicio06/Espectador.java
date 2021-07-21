@@ -4,7 +4,8 @@ public class Espectador {
 
 	// Atributos del Espectador.
 	String nombre;
-	int edad, dinero;
+	int edad; 
+	double dinero;
 
 	// Constructor por defecto.
 	public Espectador() {
@@ -14,7 +15,7 @@ public class Espectador {
 	}
 
 	// Constructor con todos los atributos de espectador.
-	public Espectador(String nombre, int edad, int dinero) {
+	public Espectador(String nombre, int edad, double dinero) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.dinero = dinero;
@@ -37,7 +38,7 @@ public class Espectador {
 		this.edad = edad;
 	}
 
-	public int getDinero() {
+	public double getDinero() {
 		return dinero;
 	}
 
