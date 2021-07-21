@@ -18,6 +18,7 @@ public class Lavadora extends Electrodomestico {
 	public Lavadora(double precio, double peso) {
 		super(precio, peso);
 		carga = CARGADEF;
+		this.precioTotal = precioFinal(precioBase, this.consumoEnergetico, peso);
 
 	}
 
