@@ -19,18 +19,32 @@ public class Ejercicio01APP {
 		arrayElec[8] = new Lavadora(170, 50, 40, "Naranja", 'E');
 		arrayElec[9] = new Television(170, 50, "Naranja", 'C', 80, true);
 
-		// Esto llama al metodo toString, lo he usado para hacer pruebas.
-//		for (int i = 0; i < arrayElec.length; i++) {
-//			System.out.println("Electrodoméstico " + (i + 1));
-//			System.out.println(arrayElec[i].toString());
-//
-//		}
+		//
+		double televisionFinal = 0, televisionAcutal = 0, lavadoraFinal = 0, lavadoraActual = 0;
 
 		for (int i = 0; i < arrayElec.length; i++) {
-			
-			arrayElec[i].precioFinal(arrayElec[i].getPrecioBase(), arrayElec[i].getConsumoEnergetico(), arrayElec[i].getPeso());
-
+			if (arrayElec[i] instanceof Television) {
+				televisionAcutal = arrayElec[i].precioFinal(arrayElec[i].getPrecioBase(),
+						arrayElec[i].getConsumoEnergetico(), arrayElec[i].getPeso());
+				televisionFinal += televisionAcutal;
+				System.out.println("En la posicion " + i + " tenemos un televisor.\nPrecio Del televisor: "
+						+ televisionAcutal + "\n");
+			}
 		}
+
+		System.out.println("El precio final de las Televisiones es: " + televisionFinal + "\n\n\n");
+
+		for (int i = 0; i < arrayElec.length; i++) {
+			if (arrayElec[i] instanceof Lavadora) {
+				lavadoraActual = arrayElec[i].precioFinal(arrayElec[i].getPrecioBase(),
+						arrayElec[i].getConsumoEnergetico(), arrayElec[i].getPeso());
+				lavadoraFinal += lavadoraActual;
+				System.out.println("En la posicion " + i + " tenemos una lavadora.\nPrecio De la lavadora: "
+						+ lavadoraActual + "\n");
+			}
+		}
+
+		System.out.println("El precio final de las Lavadoras es: " + lavadoraFinal);
 
 	}
 
