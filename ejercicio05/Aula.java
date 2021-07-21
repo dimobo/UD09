@@ -29,6 +29,7 @@ public class Aula {
 
 	}
 
+	// Aqui generaremos los alumnos.
 	private Alumno[] crearAlumnos(int num) {
 
 		Alumno[] alum = new Alumno[num];
@@ -46,15 +47,20 @@ public class Aula {
 		return alum;
 	}
 
+	// Este metodo comprobara si se puede dar calse.
 	public boolean darClase() {
 		int asistencia = 0;
 
+		// Con este for pasaremos la asistencia.
 		for (int i = 0; i < this.alumnos.length; i++) {
 			if (!this.alumnos[i].haFaltado()) {
 				asistencia++;
 			}
 		}
 
+		// Con este if miraremos si tenemos mas de la mitad de alumnos asistiendo, que
+		// el profesor no haya faltado y que el aula se corresponda a la materia del
+		// profesor.
 		if (asistencia > (this.alumnos.length / 2) && maestro.haFaltado() == false
 				&& maestro.getMateria().equals(this.materia)) {
 			return true;
@@ -102,7 +108,5 @@ public class Aula {
 	public void setAlumnos(Alumno[] alumnos) {
 		this.alumnos = alumnos;
 	}
-	
-	
 
 }

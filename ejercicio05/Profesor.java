@@ -25,7 +25,7 @@ public class Profesor extends Persona {
 	// no.
 	public boolean haFaltado() {
 		Random r = new Random();
-		int max = 20, min = 0;
+		int max = 100, min = 0;
 		int result = r.nextInt((max - min) + 1) + min;
 		if (result <= 20) {
 			return true;
