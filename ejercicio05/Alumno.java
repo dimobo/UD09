@@ -9,20 +9,27 @@ public class Alumno extends Persona {
 
 	// Constructor por defecto.
 	public Alumno() {
-		nombre = "";
-		edad = 0;
-		sexo = 0;
+		super();
 		nota = 0;
 	}
 
 	// Constructor con todos los parametros.
 	public Alumno(String nombre, int edad, char sexo, double nota) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.sexo = sexo;
-		this.nota = nota;
+		super(nombre, edad, sexo);
+		this.nota = comprobarNota(nota);
 	}
 
+	// Este metodo comprobara que no se introduzca una nota a un alumno fuera de los
+	// parametros aceptados.
+	private double comprobarNota(double nota) {
+		if (nota < 0 || nota > 10) {
+			return 0;
+		}
+		return nota;
+	}
+
+	// Sobreescritura del metodo para comprovar si el alumno ha faltado a clase o
+	// no.
 	@Override
 	public boolean haFaltado() {
 		Random r = new Random();
@@ -33,6 +40,15 @@ public class Alumno extends Persona {
 			return true;
 		}
 		return false;
+	}
+
+	// Zona de getters y setters.
+	public double getNota() {
+		return nota;
+	}
+
+	public void setNota(double nota) {
+		this.nota = nota;
 	}
 
 }
